@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Task Manager</h1>
+        <nav>
+            <a href=" ">Home</a >
+            <a href="tasks.html">Tasks</a >
+            <a href="blog.html">Dev Blog</a >
+            <a href="ethics.html">Ethics</a >
+        </nav>
+    </header>
+
+    <main>
+        <div id="login-section">
+            <h2>Please Login</h2>
+            <p>Username: student</p >
+            <p>Password: 123</p >
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-btn">Login</button>
+            <p id="login-msg" style="color: red;"></p >
+        </div>
+
+        <div id="task-section" style="display: none;">
+            <h2>My Tasks</h2>
+            <button id="logout-btn">Logout</button>
+            <hr>
+            <h3>Add New Task</h3>
+            <input type="text" id="task-title" placeholder="Task Title">
+            <input type="text" id="task-course" placeholder="Course Code">
+            <input type="date" id="task-date">
+            <input type="text" id="task-desc" placeholder="Description">
+            <button id="add-btn">Add Task</button>
+            <p id="error-msg" style="color: red;"></p >
+            
+            <hr>
+            <h3>Task List</h3>
+            <ul id="task-list"></ul>
+            
+            <p id="datetime"></p >
+        </div>
+    </main>
+    
+    <script src="JS/tasks.js"></script>
+</body>
+</html>
