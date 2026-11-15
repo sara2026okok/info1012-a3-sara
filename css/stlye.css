@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Study Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Study Task Manager</h1>
+        <nav>
+            <a href=" ">Home</a >
+            <a href="tasks.html">Tasks</a >
+            <a href="blog.html">Dev Blog</a >
+            <a href="ethics.html">Ethics</a >
+        </nav>
+    </header>
+
+    <main>
+        <!-- 图片切换部分 -->
+        <div class="slider">
+            < img id="myImage" src="images/study1.jpg" alt="Study image">
+            <br>
+            <button id="nextBtn">Change Image</button>
+        </div>
+
+        <section>
+            <h2>About the App</h2>
+            <p>This app helps students organize their study tasks in one place. I built it because I always forget my assignment deadlines.</p >
+            <p>Key features:</p >
+            <ul>
+                <li>Add, edit, and delete your tasks.</li>
+                <li>Save data in the browser using local storage.</li>
+                <li>Easy to use interface.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>About Me</h2>
+            <p>Hi, I am a student studying IT. I like coding and web design. I usually use a paper notebook for my tasks, but I want to try this web app instead.</p >
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 INFO1012 Assignment</p >
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
