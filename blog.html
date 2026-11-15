@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Development Blog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Study Task Manager</h1>
+        <nav>
+            <a href=" ">Home</a >
+            <a href="tasks.html">Tasks</a >
+            <a href="blog.html">Dev Blog</a >
+            <a href="ethics.html">Ethics</a >
+        </nav>
+    </header>
+
+    <main>
+        <h2>Project Plan & Agile Methodology</h2>
+        <p>I used Agile methodology to build this app. I divided the work into a 3-week sprint:</p >
+        <table border="1">
+            <tr>
+                <th>Phase</th>
+                <th>Tasks Completed</th>
+            </tr>
+            <tr>
+                <td>Planning</td>
+                <td>Decided the app features and sketched the UI.</td>
+            </tr>
+            <tr>
+                <td>Analysis</td>
+                <td>Learned how to use LocalStorage and DOM manipulation.</td>
+            </tr>
+            <tr>
+                <td>Design</td>
+                <td>Created the HTML layout and CSS styles.</td>
+            </tr>
+            <tr>
+                <td>Implementation</td>
+                <td>Wrote the JavaScript for adding and deleting tasks.</td>
+            </tr>
+            <tr>
+                <td>Testing</td>
+                <td>Fixed bugs related to date validation and task deletion.</td>
+            </tr>
+        </table>
+
+        <h2 style="margin-top: 30px;">Troubleshooting Blog</h2>
+        
+        <h3>Bug 1: Delete Button Not Working</h3>
+        <p><b>Date:</b> 2026-11-10 14:30</p >
+        <p><b>Problem:</b> When I clicked the delete button, it always deleted the last task instead of the one I clicked. Here is the code:</p >
+        <pre><code>delBtn.onclick = function() {
+    taskArray.splice(i, 1); 
+};</code></pre>
+        <p><b>Solution Date:</b> 2026-11-10 16:00</p >
+        <p><b>Cause:</b> The variable 'i' in the loop was changing before the button was clicked. This is a closure issue.</p >
+        <p><b>Fix:</b> I used an immediately invoked function expression (IIFE) to capture the current index.</p >
+        <pre><code>delBtn.onclick = function(index) {
+    return function() {
+        taskArray.splice(index, 1); 
+    };
+}(i);</code></pre>
+
+        <h3>Bug 2: Invalid Date Accepted</h3>
+        <p><b>Date:</b> 2026-11-12 10:00</p >
+        <p><b>Problem:</b> Users could add tasks with dates in the past.</p >
+        <p><b>Solution Date:</b> 2026-11-12 11:30</p >
+        <p><b>Cause:</b> I forgot to compare the input date with the current date.</p >
+        <p><b>Fix:</b> I added a check using `new Date()` to compare dates and show an error message.</p >
+        <pre><code>var inputDate = new Date(date);
+var today = new Date();
+if (inputDate < today) {
+    errorMsg.innerText = "Due date cannot be in the past.";
+    return;
+}</code></pre>
+    </main>
+    <footer>
+        <p>2026 INFO1012 Assignment</p >
+    </footer>
+</body>
+</html>
